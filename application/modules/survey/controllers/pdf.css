@@ -1,0 +1,82 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext');
+
+*{
+	box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
+}
+span b{
+	font-weight: 500;
+}
+.detailed-reportForm-wraper{
+	width: 100%;
+	float: left;
+}
+.container{
+	width: 100%;
+	float: left;
+	padding: 0 20px;
+}
+.detailed-reportForm-wraper h2{
+	font-size: 22px;
+	text-align: center;
+	margin: 15px 0 25px;
+}
+.reportForm-bx {
+    width: 100%;
+    float: left;
+    padding: 15px 0;
+}
+.reportForm {
+    width: 50%;
+    float: left;
+    margin: 0 0 20px;
+}
+.reportForm span{
+font-family: 'Lato', sans-serif;
+}
+.detailed-reportInfo{
+	width: 100%;
+	float: left;
+}
+.detailed-reportInfo p{
+	font-size: 18px;
+}
+.detailed-reportInfo ul li{
+	font-size: 16px;
+	line-height: 1.6;
+}
+.reportForm-col3{
+	width: 33.333%;
+	float: left;
+}
+.detailed-reportInfo{
+	width: 100%;
+	float: left;
+}
+.detailReport-msg {
+    width: 100%;
+    float: left;
+    padding: 15px 0 0 0;
+}
+.termsCondition-wrap {
+    width: 100%;
+    float: left;
+}
+.termsCondition-wrap ul li, .detailed-msgInnerbx ul li{
+	line-height: 1.6;
+	list-style-type: decimal;
+}
+.termsCondition-bx{
+	display: none;
+}
+/*#ews{
+	display: block;
+}*/
+.detailed-msgInnerbx{
+	display: none;
+}
+/*#detailedMsg-case1{
+	display: block;
+}*/
+

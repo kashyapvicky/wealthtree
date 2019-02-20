@@ -1,0 +1,965 @@
+/*-------------- MAX-WIDTH 1199PX -----------------*/
+@media(max-width: 1199px){
+h1 {font-size: 30px;}
+h2 {font-size: 25px;}
+h4{font-size: 18px;}
+.top-header-info p {
+    font-size: 15px;
+}
+.top-header-info p span {
+    font-size: 15px;
+}
+.menu {
+    padding: 35px 0;
+}
+.menu li a {
+    font-size: 16px;
+}
+.user-image {
+    margin: 0 0 20px;
+}
+.user-image img {
+    height: 102px;
+}
+.user-name-box h4 {
+    margin: 0 0 2px;
+}
+.user-name-box p {
+    font-size: 14px;
+}
+.home-subsidy-box h2, .get-service-box h2 {
+    margin: 0 0 15px;
+}
+.home-subsidy-box p, .get-service-box p {
+    font-size: 22px;
+}
+.work-category-wraper {
+	margin: 0 0 30px;
+}
+.work-category-item1 {
+    padding: 140px 0;
+}
+.work-category-item2 {
+    padding: 140px 0;
+}
+.work-category-item3 {
+    padding: 200px 0;
+}
+.work-category-item4 {
+    padding: 100px 0;
+}
+.top-social-bar.footer-social-bar {
+    padding: 10px 0 0 120px;
+}
+.footer-menu ul li a {
+    font-size: 14px;
+}
+.copy-right-wraper p {
+    font-size: 14px;
+}
+.menu li a {
+    padding: 0 13px;
+}
+/*------------------------------ Scheme page Start Here for max-width 1199px ------------------------------------------*/
+.top4-pmayChildbx-inner{
+    min-height: 300px;
+}
+.top4-pmayChildbx-inner h6{
+    text-align: center;
+}
+.top4-pmayChildbx-inner p{
+    text-align: center;
+}
+/*------------------------------ Scheme page End Here for max-width 1199px ------------------------------------------*/
+}
+
+/*------------ MAX WIDTH 991PX -------------*/
+@media(max-width: 991px){
+h1 {font-size: 26px;}
+h2{font-size: 22px;}
+h6 {font-size: 16px;}
+.top-social-bar ul li {
+    margin-right: 4px;
+}
+.menu {
+    padding: 30px 0;
+}
+.home-subsidy-box p, .get-service-box p {
+    font-size: 20px;
+}
+.user-image {
+    margin: 0 0 15px;
+}
+.user-image img {
+    height: 90px;
+}
+.how-will-work-header p {
+    font-size: 18px;
+}
+.work-category-item1 {
+    padding: 90px 0;
+}
+.work-category-item2 {
+    padding: 110px 0;
+}
+.work-category-item3 {
+    padding: 170px 0;
+}
+.work-category-item4 {
+    padding: 60px 0;
+}
+.work-category-item-info h6 {
+    margin: 0 0 10px;
+}
+.top-social-bar.footer-social-bar {
+    padding: 10px 0 0 75px;
+}
+.border-hding {
+    margin: 0 0 15px;
+}
+.footer{
+	padding: 10px 0;
+}
+.footer-social-box ul {
+    margin: 0 0 15px;
+}
+/*Login popup*/
+.phNo-box {
+    width: 400px;
+}
+.phNopopup-icon {
+    margin: 0 0 35px;
+}
+.formbtn-box {
+    margin: 70px 0 0;
+}
+/*otp popup*/
+.otpbox {
+    width: 400px;
+}
+.otpbox h6 {
+    font-size: 22px;
+    margin: 0 0 10px;
+}
+.otpbox p {
+    font-size: 18px;
+}
+.otp-input {
+    width: 60px;
+    border-radius: 40px;
+    border: 1px solid #aaa;
+    padding: 6px 15px;
+    text-align: center;
+    margin: 0 5px;
+}
+/*construct form*/
+.tab-list {
+    width: 600px;
+    margin-bottom: 40px;
+}
+/*--------------------------- Contact Us page Start Here for max width 991px ----------------------------------------*/
+.contactForm{
+    padding: 15px 30px;
+}
+.conatactus-captcha {
+    padding: 15px 0 15px 0px;
+}
+.conatactus-captcha div input {
+    width: 75px;
+}
+/*--------------------------- Contact Us page End Here for max width 991px ----------------------------------------*/
+
+/*------------------------------ Scheme page Start Here for max-width 991px ------------------------------------------*/
+.scheme-wraper{display: none;}
+.scheme-wraperMobile{display: block; padding: 0 15px;}
+.pmayInner-schemebx {
+    background-color: #ff312d4f;
+    margin: 15px 0 0;
+    position: relative;
+}
+.pmay-schembx {
+    width: 100%;
+    float: left;
+    margin: 0 0 30px;
+    padding: 0;
+}
+.top4-pmayChildbx {
+    width: 100%;
+    padding: 0 5%;
+    margin:0 0 15px;
+}
+.top4-pmayChildbx-inner {
+    min-height: auto;
+    padding: 15px 5%;
+}
+.subsidyScheme-innerwrapper:nth-child(1), .subsidyScheme-innerwrapper:nth-child(3) {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    display: flex;
+    -webkit-flex-direction: column-reverse;
+    -moz-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    -o-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+.schemebx-subsidyInfo{
+    width: 100%;
+    float: left;
+}
+.schemebx-subsidyImg {
+    width: 100%;
+    text-align: center;
+}
+.schemebx-subsidyImg img{
+    float: none!important;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+.schemeNo {
+    position: absolute;
+    top: 15%;
+    left: 1%;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'lato';
+}
+/*------------------------------ Scheme page Start Here for max-width 991px ------------------------------------------*/
+}
+
+/*-----------MAX WIDTH 767PX ---------------*/
+@media(max-width: 767px){
+.header{padding: 4px 0;}
+.logo{
+    border:none;
+}
+.top-header-info {
+    padding: 5px 0 0 0;
+    text-align: center;
+}
+.top-social-bar {
+    display: none;
+}
+.menu-wraper {
+    display: none;
+}
+#mobileMenu {
+    width: 100%;
+    float: left;
+    display: table;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    text-align: center;
+    background-color: #000000;
+    height: 100%;
+    transition: 0.25s;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    z-index: 99;
+}
+.show-nav #mobileMenu {
+	top:0;
+}
+.hide-trigger {
+    color: #ff3333;
+    font-size: 38px;
+    font-weight: 600;
+    margin: 15px 15px 0 0;
+}
+
+#mobileMenu ul {
+    width: 100%;
+    display: table-cell;
+    text-align: center;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+#mobileMenu ul li {
+    padding: 10px 0;
+}
+#mobileMenu ul li a{
+	color: #fff;
+	font-weight: 600;
+}
+.home-category-wraper {
+    padding: 20px 0 0;
+}
+.mobile-trigger {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 2%;
+    right: 5%;
+}
+.mobile-trigger span {
+    width: 100%;
+    height: 2px;
+    float: left;
+    background-color: #000;
+    position: relative;
+    top: 15px;
+}
+.mobile-trigger span:after {
+    content: '';
+    width: 100%;
+    float: left;
+    height: 2px;
+    background-color: #000;
+   position: absolute;
+   top: 9px
+}
+.mobile-trigger span:before {
+    content: '';
+    width: 100%;
+    float: left;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    top: -9px;
+}
+.home-message-wraper {
+    margin-bottom: 15px;
+}
+.home-subsidy-box {
+    margin: 0 0 15px;
+}
+.user-name-box {
+    padding: 7px 0 0;
+}
+.user-image img {
+    height: auto;
+    max-width: 100%;
+}
+.work-category-wraper {
+    background: none;
+    padding: 0;
+}
+.work-category-item1, .work-category-item2, .work-category-item3, .work-category-item4 {
+    padding: 10px 0;
+    max-width: 100%;
+}
+.work-category-item-info {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+.work-category-item-image {
+    width: 100%;
+}
+.work-category-item-image img, .work-category-item-image2 img, .work-category-item-image3 img, .work-category-item-image4 img {
+    height: 160px;
+    text-align: center;
+    margin: 0 auto;
+    float: none;
+}
+.work-category-item2 .work-category-item-image img, .work-category-item4 .work-category-item-image img {
+    float: none;
+}
+.footer-menu-wraper{
+	width: 100%;
+	padding: 5px 0 0;
+}
+.footer-menu{
+	margin: 0 0 10px;
+}
+.footer-menu ul li {
+    float: left;
+    width: 100%;
+    border: none;
+    padding: 0;
+    padding: 3px 0;
+}
+.footer-social-wraper{
+	width: 100%;
+}
+.top-social-bar.footer-social-bar {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+}
+.border-hding {
+    margin: 0 0 10px;
+}
+.footer-social-box ul {
+    width: 100%;
+    float: left;
+    border-bottom: none;
+}
+.footer-social-box ul li {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+}
+.copy-right-wraper {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+/*Login popup*/
+.phNo-box {
+    width: 320px;
+    padding: 15px;
+}
+.phNopopup-icon {
+    width: 100%;
+    padding: 55px 0 84px;
+    margin: 0 0 15px;
+    background-size: 150px;
+}
+.ph-form-row{
+    background-size: 30px;
+}
+.ph-form-row label {
+    font-size: 15px;
+}
+.form-btn {
+    font-size: 16px;
+    padding: 13px 50px;
+}
+.formbtn-box {
+    margin: 40px 0 0;
+}
+.formfull-row {
+    font-size: 16px;
+}
+.hide-phNopopup {
+    right: 1%;
+    top: 4%;
+    background-size: 22px;
+}
+/*otp form*/
+.otpbox {
+    width: 320px;
+    padding: 15px;
+}
+.otppopup-icon {
+    padding: 30px 0 45px;
+    margin: 0 0 15px;
+    background-size: 150px;
+}
+.otpbox h6 {
+    font-size: 18px;
+    margin: 0 0 7px;
+}
+.otpbox p {
+    font-size: 15px;
+}
+.otp-input {
+    width: 45px;
+    padding: 3px 15px;
+}
+.formbtn-box1 {
+    margin: 20px 0 15px;
+}
+.resend-otp {
+    font-size: 16px;
+}
+/*construct form*/
+.tab-list {
+    width: 400px;
+    margin-bottom: 20px;
+}
+.tab {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #666;
+    padding: 13px 0;
+    font-weight: 600;
+}
+.slect-row {
+    margin: 20px 0;
+}
+.slect-row .formfull-row{
+    width: 100%;
+}
+/*indepedent income*/
+.son-salary-row {
+    margin: 20px 0;
+}
+.sagebx {
+    margin: 0 0 15px;
+    width: 100%;
+    float: left;
+    background-size: 18px;
+}
+input.wsalary {
+    padding: 3px 0 20px 40px;
+    background-size: 16px;
+}
+select.sage {
+    padding: 3px 0 20px 40px;
+}
+.daughter-salary-row {
+    margin: 20px 0;
+}
+.apnd-icon a {
+    left: 65%;
+}
+
+/*-----------------------------------------------EMI- CALCULATE-------------------------------------------------*/
+
+.calculate-box-wraper {
+    padding: 25px 0 5px;
+}
+.calculatebx {
+    width: 100%;
+    margin: 9px 0;
+}
+.calculateInput{
+    width: 100%;
+}
+.calculateInput input{
+    padding-left: 30px;
+}
+.calculateInput span{
+    width: 30px;
+}
+.withPmay-schemebx {
+    width: 100%;
+    border-right: none;
+}
+.withPmay-schemebx h3 {
+    text-align: center; 
+    padding-right: 0;
+}
+.withPmay-inputbx {
+    margin: 0 0 20px;
+}
+.withPmay-inputbx label {
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 10px;
+}
+.withPmay-inputbx input {
+    width: 100%;
+}
+.withPmay-schemebx p {
+    padding-left: 0;
+    margin: 0 0 15px;
+}
+
+.withoutPmay-schemebx {
+    width: 100%;
+    float: left;
+    text-align: left;
+}
+.withoutPmay-inputWraper p {
+    text-align: left;
+    margin: 0 0 15px;
+}
+.totalsavingPercenteg-bx {
+    width: 100%;
+    float: left;
+    padding: 15px 0;
+}
+.totalSavingbx {
+    width: 100%;
+    text-align: left;
+    padding-right: 0;
+    margin: 0 0 15px;
+}
+.totalSavingbx label, .percenteagebx label {
+    display: block;
+    margin: 0 0 15px;
+}
+.totalSavingbx input, .percenteagebx input{
+    width: 100%;
+}
+.percenteagebx {
+    width: 100%;
+    padding-left: 0;
+}
+.emi_bottom-tagline p {
+    font-size: 16px;
+}
+ .withoutPmay-schemebx h3 {
+    text-align: center;
+}
+.calculatebtn-box {
+    padding: 25px 0 0;
+}
+/*--------------------------- Contact Us page Start Here for max width 767px ----------------------------------------*/
+.contact-addressbx{
+    padding: 0;
+}
+.contactus-infobx {
+    width: 100%;
+    padding: 25px 0 0 0;
+}
+.contact-address{
+    margin: 0;
+}
+.conatct-formbx{
+    width: 100%;
+    float: left;
+    padding: 12px 0 0;
+}
+.contactForm {
+    padding: 15px;
+}
+.form-row{
+    padding: 0px 0px 0px 40px;
+}
+/*--------------------------- Contact Us page End Here for max width 767px ----------------------------------------*/
+
+/*------------------------------ Scheme page Start Here for max-width 767px ------------------------------------------*/
+.pmYojna-schemeBx {
+    max-width: 100%;
+    margin: 22px 0;
+}
+.pmYojna-schemeBx h2 {
+    font-size: 20px;
+    margin: 0 0 15px;
+}
+.pmYojna-schemeBx p {
+    font-size: 16px;
+}
+.subsidyScheme-wraper {
+    padding: 6px 30px 0px;
+}
+.schemebx-subsidyImg img {
+    margin-bottom: 25px;
+}
+.schemebx-subsidyInfo h2:before{
+    display: none;
+}
+.schemebx-subsidyInfo h2{
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+.schemebx-subsidyInfo p{
+    font-size: 16px;
+}
+.schemebx-subsidyInfo h3 {
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+.schemebx-subsidyInfo ul li{
+    font-size: 16px;
+}
+/*------------------------------ Scheme page End Here for max-width 767px ------------------------------------------*/
+
+/*------------------------------ Aboutus page Start Here for max-width 767px ------------------------------------------*/
+.aboutus-inner-wrap {
+    display: flex;
+    padding: 20px 0 10px;
+    -webkit-flex-direction: column-reverse;
+    -moz-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    -o-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+.aboutus-infoBx p {
+    font-size: 16px;
+}
+.investmentBox-wraper p {
+    font-size: 16px;
+}
+.state-hdng {
+    font-size: 16px;
+}
+.abouts-infoImg {
+    width: 100%;
+    float: none;
+    text-align: center;
+    clear: both;
+}
+.abouts-infoImg img {
+    float: none;
+    margin: 0 auto;
+}
+.aboutus-infoBx{
+    width: 100%;
+    float: left;
+    margin: 25px 0 0;
+    padding: 0;
+}
+
+.investmentBox-wraper .investment-advisory-box:first-child {
+    margin-left: 0;
+}
+.state-box {
+    width: 100%;
+    padding: 0 15px 15px 15px!important;
+}
+.state-img img {
+    margin: 0 auto;
+}
+.investment-advisory-box {
+    width: 120px;
+    height: 120px;
+    padding: 41px 12px;
+    margin: 0 3px;
+    font-size: 14px;
+    float: left;
+    line-height: normal;
+    margin: 10px;
+}
+.ourTeam-wraper {
+    padding: 0px;
+    clear: both;
+}
+.directorCard-wraper{
+    padding: 20px 0;
+}
+.director-cardBx {
+    width: 100%;
+    padding: 0 30px;
+}
+.team-cardBx {
+    width: 100%;
+    padding: 0 15px 20px 15px;
+}
+.aboutus-tab-wraper{
+    padding: 0 15px;
+}
+.aboutus-tab-wraper h2{
+    font-size: 16px;
+}
+.aboutus-tab-wraper p{
+    max-width: 100%;
+    font-size: 16px;
+}
+.aboutus-tab-bx{
+    margin: 10px 0 0;
+    padding:0;
+    max-width: 100%;
+}
+.aboutus-tabImg{
+    display: none;
+}
+.aboutus-tabs{
+    width: 40%;
+}
+.aboutTab{
+    padding:0 7px;
+}
+.aboutTab a{
+    width: 100%;
+    font-size: 14px;
+}
+.aboutus-tab-content {
+    width: 60%;
+    padding: 70px 0 0 5px;
+}
+.aboutus-tab-content h6 {
+    font-size: 15px;
+    text-align: center;
+}
+.aboutus-tab-content ul li {
+    font-size: 14px;
+    line-height: 1.4;
+}
+.aboutTab a {
+    width: 100%;
+    font-size: 13px;
+    padding: 20px 0;
+}
+/*------------------------------ Aboutus page End Here for max-width 767px ------------------------------------------*/
+
+/*------------------------------ FAQ page Start Here for max-width 767px ------------------------------------------*/
+.mobileFaq-nav{
+    display: block;
+}
+.faq-sidebar{
+    width: 100%;
+    float: left;
+    padding: 0;
+}
+.faq-tabs{
+    width: 100%;
+    margin: 15px 0;
+    display: none;
+}
+.faq-tabs.fixed-faqNav{
+    position: static;
+    width: 100%;
+    float: left;
+    top: 0;
+    z-index: 999;
+}
+.faq-contentbx-wraper {
+    width: 100%;
+    float: right;
+    padding:15px 0 0 0;
+}
+/*------------------------------ FAQ page End Here for max-width 767px ------------------------------------------*/
+}
+
+/*------- MAX WIDTH 479PX ----------*/
+@media(max-width: 479px){
+h1 {
+   font-size: 22px;
+}
+h2 {
+    font-size: 16px;
+}
+.home-subsidy-box p, .get-service-box p {
+    font-size: 16px;
+}
+.how-will-work-wraper {
+    padding: 15px 0;
+}
+.how-will-work-header h1 {
+    margin: 0 0 15px;
+}
+.how-will-work-header p {
+    font-size: 15px;
+}
+/*construct form*/
+.tab-list {
+    width: 350px;
+    margin-bottom: 0;
+}
+.tab{font-size: 13px;
+}
+.tab-content h1{font-size: 20px;
+}
+/*radio-btn css*/
+.pkka-houseResultbx {
+    margin: 25px 0 15px;
+}
+.bd-radio [type="radio"]:checked + label, .bd-radio [type="radio"]:not(:checked) + label {
+    padding-left: 60px;
+}
+.daughter-salary-row {
+    padding-left: 0px;
+}
+.bd-radio [type="radio"]:checked + label, .bd-radio [type="radio"]:not(:checked) + label {
+    line-height: 30px;
+    font-size: 16px;
+}
+.container-check {
+    font-size: 20px;
+    line-height: 30px;
+}
+.wsalary {
+    padding: 4px 0 20px 25px!important;
+}
+
+/*basic detals*/
+.partner-organisation-hder {
+    margin: 0 0 20px;
+}
+.first-namebx {
+    margin: 15px 0 20px;
+}
+.basic-panform-row {
+    margin: 15px 0 20px;
+}
+.genderbox {
+    margin: 15px 0 20px;
+}
+.salary-box {
+    margin: 15px 0 20px;
+    background-size: 20px;
+}
+.salary-box label {
+    padding-left: 40px;
+    font-size: 16px;
+}
+.slect-row {
+    margin: 15px 0;
+}
+.captcha-box label {
+    font-size: 16px;
+    margin: 0 0 20px;
+}
+.captcha-input-box div {
+    max-width: 90px;
+}
+.partner-organisation-hder p {
+    font-size: 18px;
+    max-width: 90%;
+}
+.first-namebx label {
+    font-size: 15px;
+    padding-left: 40px;
+}
+.pan-form-row label {
+    font-size: 15px;
+    padding-left: 40px;
+}
+.pan-form-row {
+    background-size: 30px;
+}
+/*---------------- scheme page css start here for max width 479px ----------------------------*/
+.schemeNo{
+    font-size: 18px;
+}
+/*---------------- scheme page css End here for max width 479px ----------------------------*/
+}
+
+
+@media(max-width: 420px){
+.phNo-box {
+    width: 276px;
+}
+.phNopopup-icon {
+    padding: 55px 0 60px;
+    background-size: 120px;
+}
+.ph-form-row {
+    background-size: 25px;
+}
+.ph-form-row label {
+    padding-left: 40px;
+    font-size: 13px;
+}
+.formfull-row {
+    padding: 10px 0 15px 40px;
+    font-size: 15px;
+}
+.formbtn-box {
+    margin: 20px 0 0;
+}
+.form-btn {
+    font-size: 15px;
+    padding: 12px 45px;
+}
+/*otp form*/
+.otpbox {
+    width: 276px;
+}
+.otp-input {
+    width: 40px;
+}
+}
+
+@media(max-width: 360px){
+.tab-list {
+    width: 300px;
+}
+.tab-content h1 {
+    font-size: 18px;
+}
+/*--------------------------- Contact Us page Start Here for max width 360px ----------------------------------------*/
+.conatactus-captcha div input{
+    width: 60px;
+    font-size: 14px;
+}
+.conatactus-captcha div span{
+    font-size: 16px;
+    padding: 0;
+}
+.contactus-infobx h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+.contactus-infobx h2:before {
+    margin-bottom: 10px;
+}
+.contact-address b{
+    padding-left: 15px; 
+    font-size: 15px;
+    line-height: normal;
+}
+/*--------------------------- Contact Us page End Here for max width 360px ----------------------------------------*/
+}
+

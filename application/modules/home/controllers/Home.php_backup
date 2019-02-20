@@ -1,0 +1,485 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Home extends MX_Controller {
+
+	function __construct()
+    {
+		parent::__construct();
+		$this->load->library('form_validation');
+		$this->load->model('home_model');
+	}
+
+	public function index()
+	{
+		$data['page']='home_view';
+		_layout($data);
+	}
+	public function send_otp_to_mobile()
+	{
+		$this->session->unset_userdata('otp');
+		$phone_number = $this->input->post('phone_number');
+		$this->session->set_userdata('otp',1234);
+		$this->session->set_userdata('phone_number',$phone_number);
+		echo $phone_number;
+	}
+	public function validate_otp()
+	{
+		$otp = $this->session->userdata('otp');
+		$first_digit = $this->input->post('digit1');
+		$second_digit = $this->input->post('digit2');
+		$third_digit = $this->input->post('digit3');
+		$fourth_digit = $this->input->post('digit4');
+		$otp_entered = "".$first_digit.""+"".$second_digit.""+"".$third_digit.""+"".$fourth_digit."";
+		// echo $otp_entered;
+		// echo"<br>";
+		// echo $otp;
+		// die;
+		if($otp == $otp_entered)
+		{
+			redirect('home/after_validation');
+		}
+		else
+		{
+			$this->session->set_flashdata('Invalid_otp','YOU ENTERED A INVALID OTP');
+		}
+		redirect(base_url());
+	}
+	public function after_validation()
+	{
+		//echo"there"; die;
+		$phone_number = $this->session->userdata('phone_number');
+		$row = $this->home_model->check_phone_number($phone_number);
+		if($row)
+		{
+			$row = $this->home_model->check_survey_status($phone_number,$row['id']);
+			$survey_status = $row['survey_status'];
+			if((int) $survey_status == 5)
+			{
+				$data['msg'] = 'Your Survey Is Already Completed';
+			 	$data['page'] = 'success';
+				_layout($data);
+			}
+			elseif((int)$survey_status >= 0 && (int)$survey_status < 3 )
+			{
+				$basick_survey_row = $this->home_model->check_basick_survey($row['id']);
+				$basick_complete_status = $basick_survey_row['is_completed'];
+
+				if((int)$basick_complete_status == 2)
+				{
+					$this->session->set_tempdata('user_id',$row['id'],3000);
+					$this->session->set_tempdata('first_name', $row['first_name'],3000);
+					redirect('survey/second_survey');
+				}
+				else
+				{ 
+					//echo"<script>alert('here')<script/>";die;
+
+					$this->session->set_tempdata('user_id', $row['id'],3000);
+					$this->session->set_tempdata('first_name', $row['first_name'],3000);
+					//$this->session->set_userdata('user_id',$insert_id);
+					redirect('survey');
+				}
+			}
+			else
+			{
+				$data['msg'] = 'Exceed Attempt Limit, Contact To Support Center';
+			 	$data['page'] = 'success';
+				_layout($data);
+			}
+			// if((int)$survey_status >= 0 && (int)$survey_status < 4)
+			// {
+			// 	$basick_survey_row = $this->home_model->check_basick_survey($row['id']);
+			// 	$basick_complete_status = $basick_survey_row['is_completed'];
+
+			// 	if((int)$basick_complete_status == 2)
+			// 	{
+			// 		$this->session->set_tempdata('user_id',$row['id'],120);
+			// 		redirect('survey/second_survey');
+			// 	}
+			// 	else
+			// 	{ 
+
+			// 		$org_array = $this->home_model->get_organisations();
+			// 		$data['organisations'] = $org_array;
+			// 		$data['page'] = 'organisation';
+			// 		_layout($data);
+			// 	}
+			// }
+			// else
+			// {
+			// 	$data['msg'] = 'Your Survey Is Already Completed';
+			// 	$data['page'] = 'success';
+			// 	_layout($data);
+			// }
+		}
+		else
+		{
+
+			redirect('home/insert_basick_detail');
+			//echo"hello";die;
+			// $org_array = $this->home_model->get_organisations();
+			// $data['organisations'] = $org_array;
+			// $data['page'] = 'organisation';
+			// _layout($data);
+		}
+
+	}
+	public function check_pan_phone_existence()
+	{
+		$phone_number = $this->input->post('phone_no');
+		$pan_number = $this->input->post('pan_no');
+
+		$row = $this->home_model->check_pan_phone($phone_number,$pan_number);
+		if($row)
+		{
+			 $row = $this->home_model->check_survey_status_with_pan_phone($phone_number,$pan_number);
+			 $survey_status = $row['survey_status'];
+			if((int) $survey_status == 5)
+			{
+				$data['msg'] = 'Your Survey Is Already Completed';
+			 	$data['page'] = 'success';
+				_layout($data);
+			}
+			elseif((int)$survey_status >= 0 && (int)$survey_status < 3 )
+			{
+				//echo"<script>alert('o to 4')</script>>";
+				$basick_survey_row = $this->home_model->check_basick_survey($row['id']);
+				$basick_complete_status = $basick_survey_row['is_completed'];
+
+				if((int)$basick_complete_status == 2)
+				{
+					$this->session->set_tempdata('user_id',$row['id'],3000);
+					$this->session->set_tempdata('first_name', $row['first_name'],3000);
+					redirect('survey/second_survey');
+				}
+				else
+				{ 
+
+					$this->session->set_tempdata('user_id',$row['id'],3000);
+					$this->session->set_tempdata('first_name', $row['first_name'],3000);
+					//$this->session->set_userdata('user_id',$insert_id);
+					redirect('survey');
+
+					// $org_array = $this->home_model->get_organisations();
+					// $data['organisations'] = $org_array;
+					// $data['page'] = 'organisation';
+					// _layout($data);
+				}
+			}
+			else
+			{
+				$data['msg'] = 'Exceed Attempt Limit, Contact To Support Center';
+			 	$data['page'] = 'success';
+				_layout($data);
+			}
+			// if((int)$survey_status >= 0 && (int)$survey_status <  4)
+			// {
+			// 	$basick_survey_row = $this->home_model->check_basick_survey($row['id']);
+			// 	$basick_complete_status = $basick_survey_row['is_completed'];
+
+			// 	if((int)$basick_complete_status == 2)
+			// 	{
+			// 		$this->session->set_userdata('user_id',$row['id']);
+			// 		redirect('survey/second_survey');
+			// 	}
+			// 	else
+			// 	{ 
+
+			// 		$org_array = $this->home_model->get_organisations();
+			// 		$data['organisations'] = $org_array;
+			// 		$data['page'] = 'organisation';
+			// 		_layout($data);
+			// 	}
+			// }
+			// else
+			// {
+			// 	$data['msg'] = 'Your Survey Is Already Completed';
+			// 	$data['page'] = 'success';
+			// 	_layout($data);
+			// }
+		}
+		else
+		{
+			redirect('home/insert_basick_detail');
+		}
+
+	}
+	public function insert_basick_detail()
+	{
+
+		//code to update data
+		if($this->input->post('hidden_id'))
+		{
+			//print_r($_POST); die;
+			$id = $this->input->post('hidden_id');
+			$phone_number_2 = $this->session->userdata('phone_number');
+			$first_name = $this->input->post('first_name');
+			$last_name = $this->input->post('last_name');
+			$email = $this->input->post('email');
+			$pan_number = $this->input->post('pan_number');
+			$dob = $this->input->post('dob');
+			$gender = $this->input->post('gender');
+			$working = $this->input->post('working');
+			$income = $this->input->post('income');
+			$middle_name = $this->input->post('middle_name');
+			//$income = $this->input->post('income');
+			$org = $this->input->post('org');
+			$psu = $this->input->post('psu');
+			$date = str_replace('/', '-', $dob);
+			$dob_date =  date('Y-m-d', strtotime($date)); 
+			//echo $dob_date; die;
+			$data = array(
+			'first_name'=>$first_name,
+			'last_name'=>$last_name,
+			'email'=>$email,
+			'dob'=>$dob_date,
+			'phone_number_2'=>$phone_number_2,
+			'gender'=>$gender,
+			'working'=>$working,
+			'income'=>$income,
+			'org'=>$org,
+			'psu'=>$psu,
+			'pan_number'=>$pan_number,
+			'user_type'=>'website',
+			'middle_name'=>$middle_name
+			);
+			$bool = $this->home_model->update_basic_data($data,$id);
+			if($bool)
+			{
+				$this->session->set_tempdata('user_id', $id,3000);
+				$this->session->set_tempdata('first_name', $first_name,3000);
+				//$this->session->set_userdata('user_id',$insert_id);
+				redirect('survey');
+			}
+			else{
+				$this->sesssion->set_flashdata('basick_error','Error In Insertion');
+			}
+		}// code to update data end here
+		//code to insert data
+		else
+		{
+			$this->form_validation->set_rules('first_name', 'First Name', 'required');
+			$this->form_validation->set_rules('last_name', 'Last Name', 'required');
+			$this->form_validation->set_rules('email', 'Email', 'required');
+			$this->form_validation->set_rules('dob', 'Date Of Birth', 'required');
+			$this->form_validation->set_rules('pan_number', 'Pan Number', 'required');
+			$this->form_validation->set_rules('gender', 'Gender', 'required');
+			//$this->form_validation->set_rules('working', 'Working', 'required');
+			$this->form_validation->set_rules('income', 'Income', 'required');
+			//$this->form_validation->set_rules('org', 'Organisation', 'required');
+			//$this->form_validation->set_rules('psu', 'PSU', 'required');
+			if ($this->form_validation->run() == TRUE)
+			{ 
+				$phone_number = $this->session->userdata('phone_number');
+				$first_name = $this->input->post('first_name');
+				$last_name = $this->input->post('last_name');
+				$email = $this->input->post('email');
+				$pan_number = $this->input->post('pan_number');
+				$dob = $this->input->post('dob');
+				$gender = $this->input->post('gender');
+				$working = $this->input->post('working');
+				$income = $this->input->post('income');
+				$middle_name = $this->input->post('middle_name');
+				//$income = $this->input->post('income');
+				$org = $this->input->post('org');
+				$psu = $this->input->post('psu');
+				$date = str_replace('/', '-', $dob);
+				$dob_date =  date('Y-m-d', strtotime($date)); 
+				//echo $dob_date; die;
+				$data = array(
+				'first_name'=>$first_name,
+				'last_name'=>$last_name,
+				'email'=>$email,
+				'dob'=>$dob_date,
+				'phone_number'=>$phone_number,
+				'gender'=>$gender,
+				'working'=>$working,
+				'income'=>$income,
+				'org'=>$org,
+				'psu'=>$psu,
+				'pan_number'=>$pan_number,
+				'user_type'=>'website',
+				'middle_name'=>$middle_name
+				);
+				$insert_id = $this->home_model->insert_basic_data($data);
+				if($insert_id)
+				{
+					$this->session->set_tempdata('user_id', $insert_id,3000);
+					//$this->session->set_userdata('user_id',$insert_id);
+					$this->session->set_tempdata('first_name',$first_name,3000);
+					redirect('survey');
+				}
+				else{
+					$this->sesssion->set_flashdata('basick_error','Error In Insertion');
+				}
+
+			} 
+		}	
+		$org_array = $this->home_model->get_organisations();
+		$sector_array = $this->home_model->get_org_sectors(); 
+		$data['organisation_for_basick_details']=$org_array;
+		$data['sectors'] = $sector_array;
+		$data['page']='basick_detail';
+		_layout($data);
+	}
+
+
+	public function get_data_if_pan_exist()
+	{
+		$pan_number = $this->input->post('pan_number');
+		$row = $this->home_model->data_if_pan_exist($pan_number);
+		if($row)
+		{
+			echo json_encode($row);
+		}
+		else
+		{
+			echo json_encode(1);
+		}
+	}
+
+
+
+	public function open_calc()
+	{
+		$user_id = $this->session->tempdata('user_id');
+		if($user_id)
+		{
+			$total_salary = $this->home_model->get_total_income($user_id);
+			//echo $user_id; 
+			//echo"<pre>";print_r($total_salary);
+			 $self_income = $total_salary[0]['income'];
+			 //echo "<br>";
+			    $wife_income = $total_salary[0]['independent_wife'];
+			   //echo "<br>";
+
+			$sibling_salary = 0;
+			foreach ($total_salary as $key => $value)
+			{
+				$sibling_salary+= $value['salary'];	
+			}
+			//echo"sb" .$sibling_salary;
+			$total_income = $self_income + $wife_income + $sibling_salary;
+			$data['total_income'] = $total_income;
+		}
+		$data['page']='calc';
+		_layout($data);
+	}
+	public function calculate()
+	{
+		error_reporting(E_ERROR | E_PARSE);
+		//echo json_encode('200');
+		$loan_amount = $this->input->post('loan_amount');
+		$tenure = $this->input->post('tenure');
+		$income = $this->input->post('income');
+
+		// $loan_amount =2000000;
+		// $tenure = 21;
+		// $income = 123213123;
+
+		// $output = array(
+		// 	'loan_amount'=>$loan_amount,
+		// 	'tenure'=>$tenure,
+		// 	'income'=>$income);
+		// echo json_encode($output);
+		//$subsidyinterest = 0;
+		if($income<=600000)
+		{
+			$subsidyinterest=6.5;
+		}
+		else if($income > 600000 && $income<= 1200000)
+		{
+			$subsidyinterest=4;
+		}
+		else if($income > 1200000 && $income<= 1800000)
+		{
+			$subsidyinterest=3;
+		}
+		else
+		{
+			$subsidyinterest=0;
+		}
+		//echo $subsidyinterest;
+		$r = $subsidyinterest/(12*100);
+		// echo"<br>";
+		// echo $r;
+
+		$subsidy = 0;
+		if($loan_amount>600000 && $subsidyinterest==6.5){
+			$loanbalance=600000;
+		}
+		else if($loan_amount>900000 && $subsidyinterest==4){
+			$loanbalance=900000;
+		}
+		else if($loan_amount>1200000 && $subsidyinterest==3){
+			$loanbalance=1200000;
+		}
+		else
+		{
+			$loanbalance = $loan_amount;
+		}
+
+		if($tenure<=20){
+		 $EMIS = $loanbalance*$r*pow((1+$r),($tenure*12))/((pow((1+$r),($tenure*12)))-1);
+		}
+		else
+		{
+			$EMIS = $loanbalance*$r*pow((1+$r),(20*12))/((pow((1+$r),(20*12)))-1);
+		}
+
+		if($tenure<=20 && $income<1800001)
+		{
+			for($i=1;$i<=($tenure*12);$i++)
+			{
+				$interestcomp=$loanbalance*$r;
+				$principlecomp=$EMIS-$interestcomp;
+				$loanbalance=$loanbalance-$principlecomp;
+				$netpresentvalue=$interestcomp/pow(1.0075,$i);
+				$subsidy=$subsidy+$netpresentvalue;
+			}
+
+		}
+
+		if($tenure>20 && $income<1800001){
+			for($i=1;$i<=(20*12);$i++)
+			{
+				$interestcomp=$loanbalance*$r;
+				$principlecomp=$EMIS-$interestcomp;
+				$loanbalance=$loanbalance-$principlecomp;
+				$netpresentvalue=$interestcomp/pow(1.0075,$i);
+				$subsidy=$subsidy+$netpresentvalue;
+
+			} 
+		}
+		//echo $subsidy;
+		$bankinterestrate=13;
+		$rbank= $bankinterestrate/(12*100);
+		$EMI= ($loan_amount-$subsidy)*$rbank*pow((1+$rbank),($tenure*12))/((pow((1+$rbank),($tenure*12)))-1);
+		//this is pmay scheme emi
+
+		//echo "<br>";
+		//echo $EMI;
+		$EMIBank= $loan_amount*$rbank*pow((1+$rbank),($tenure*12))/((pow((1+$rbank),($tenure*12)))-1);
+		$pmay_in_t_year = $EMI*$tenure*12;
+		$without_pmay_in_t_year = $EMIBank*$tenure*12;
+		$total_saving = $without_pmay_in_t_year-$pmay_in_t_year;
+
+
+		// for percentage
+		$both_emis_dif = $EMIBank-$EMI;
+		$percentage = $both_emis_dif/$EMIBank*100;
+
+
+		//echo $EMIBank;
+		$output = array(
+			'subsidy'=>$subsidy,
+			'emi'=>$EMI,
+			'EMIBank'=>$EMIBank,
+			'pmay_in_t_year'=>$pmay_in_t_year,
+			'without_pmay_in_t_year'=>$without_pmay_in_t_year,
+			'percentage'=>$percentage,
+			'total_saving'=>$total_saving);
+		echo json_encode($output);
+	}
+}
